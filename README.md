@@ -1,3 +1,5 @@
+ПАРОЛЬ ОТ АРХИВА - matrix123!
+
 # Matrix Messenger
 
 Мессенджер в стиле "Матрицы" на Python + Tkinter.
