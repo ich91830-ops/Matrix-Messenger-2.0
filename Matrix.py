@@ -24,7 +24,17 @@ except ImportError:
 
 DEFAULT_PORT = 5555
 DEFAULT_HOST = '127.0.0.1'
-DB_FILE = "matrix_users.db"
+# Определяем папку, где лежит .exe (или .py)
+if getattr(sys, 'frozen', False):
+    # Запущено как .exe
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    # Запущено как .py
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DB_FILE = os.path.join(BASE_DIR, "matrix_users.db")
+STICKERS_DIR = os.path.join(BASE_DIR, "stickers")
+DOWNLOADS_DIR = os.path.join(BASE_DIR, "downloads")
 SALT = b"matrix_salt_v2_change_me_in_prod"
 STICKERS_DIR = "stickers"
 DOWNLOADS_DIR = "downloads"
